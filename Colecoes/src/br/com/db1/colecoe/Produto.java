@@ -1,13 +1,15 @@
 package br.com.db1.colecoe;
 
-public class Produto {
+public class Produto implements Comparable<Produto>{
 
 	private Integer id;
 	private String descricao;
 	private Double valor;
-
-	public Produto(Integer id, String descricao, Double valor) {
-		
+	
+	public Produto(Integer id, String descricao, Double valor){
+		this.id = id;
+		this.descricao = descricao;
+		this.valor = valor;
 	}
 
 	public Integer getId() {
@@ -32,5 +34,17 @@ public class Produto {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+
+	@Override
+	public int compareTo(Produto outroProduto) {
+		if(this.getValor() < outroProduto.getValor()){
+		return -1;
+		}
+		if(this.getValor() > outroProduto.getValor()){
+			return 1;
+		}
+		else
+			return 0;
 	}
 }

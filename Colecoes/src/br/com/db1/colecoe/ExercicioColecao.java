@@ -2,6 +2,7 @@ package br.com.db1.colecoe;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -15,12 +16,6 @@ public class ExercicioColecao {
 
 	List<String> valores = new ArrayList<>();
 	
-	Produto produto = new Produto(98, "CELULAR", 1000.00);
-	Produto produto2 = new Produto(50, "MONITOR", 200.00);
-	Produto produto3 = new Produto(55, "CANECA", 50.00);
-	
-	List lista = new ArrayList<>();
-
 	public ExercicioColecao() {
 		vogais.add("a");
 		vogais.add("e");
@@ -50,32 +45,6 @@ public class ExercicioColecao {
 		consoantes.add("y");
 		consoantes.add("z");
 
-		valoresNumericos.add(1);
-		valoresNumericos.add(2);
-		valoresNumericos.add(3);
-		valoresNumericos.add(4);
-		valoresNumericos.add(5);
-		valoresNumericos.add(6);
-		valoresNumericos.add(7);
-		valoresNumericos.add(8);
-		valoresNumericos.add(9);
-		valoresNumericos.add(10);
-
-		valores.add("banana");
-		valores.add("maca");
-		valores.add("pera");
-		valores.add("jabuticaba");
-		valores.add("ameixa");
-		valores.add("uva");
-		valores.add("laranja");
-		valores.add("limão");
-		valores.add("tomate");
-		valores.add("melancia");
-		
-		
-		lista.add(produto);
-		lista.add(produto2);
-		lista.add(produto3);
 	}
 
 	public Set<String> getVogais(String nomeParametro) {
@@ -106,54 +75,24 @@ public class ExercicioColecao {
 		return consoantesEncontradas;
 	}
 
-	public List<Integer> removerTerceiraPosicao(Integer posicao) {
-		valoresNumericos.remove(posicao);
-
-		return valoresNumericos;
-	}
-
-	public List<Integer> multiplosDeTres(Integer posicao) {
-
-		for (Integer x = 0; x < 10; x++) {
-			if (x % 3 == 0) {
-				valoresNumericos.get(posicao);
-			}
-		}
-		return valoresNumericos;
-	}
-
-	public List<Integer> multiplosDeDois(Integer valores) {
-		for (Integer x = 0; x < 10; x++) {
-			if (x % 2 == 0) {
-				valoresNumericos.get(valores);
-			}
-		}
-		return valoresNumericos;
-
-	}
-
-	public Set<String> copiarValores() {
-		Set<String> valoresNovaLista = new HashSet<>(valores);
-		return valoresNovaLista;
-	}
-
-	public List<String> compararDuasList() {
-		return valores;
-	}
-	
-	public List<String> compararDuasList2() {
+	public List<Integer> removerTerceiraPosicao(List<Integer> valores) {
+		valores.remove(2);
 		return valores;
 	}
 
-	public Set<String> compararDoisSet() {
-		Set<String> valoresNovos = new HashSet<>(valores);
-		return valoresNovos;
+	public List<Integer> getNumerosPares(List<Integer> valores) {
+		List<Integer> valoresMultiplosDeDois = new ArrayList<>();
+		Iterator<Integer> it = valores.iterator();
+		while (it.hasNext()){
+			Integer valor = it.next();
+
+			if (valor > 0 && valor % 2 == 0){
+				valoresMultiplosDeDois.add(valor);
+			}
+		}
+		return valoresMultiplosDeDois;
 	}
-	
-	public Set<String> compararDoisSet2() {
-		Set<String> valoresNovos = new HashSet<>(valores);
-		return valoresNovos;
-	}
+
 	
 	
 
