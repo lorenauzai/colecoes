@@ -80,12 +80,15 @@ public class ExercicioColecao {
 		return consoantesEncontradas;
 	}
 
-	public Set<Integer> removerTerceiraPosicao(Integer posicao) {
-		valoresNumericos.remove(3);
+	public List<Integer> removerTerceiraPosicao(Integer posicao) {
+		valoresNumericos.remove(posicao);
 		
-		return ;
+		return valoresNumericos;
 	}
 	
-	
+	public List<Integer> multiplosDeTres(Integer numeros){
+		
+		return valoresNumericos;
+	}
 
 }

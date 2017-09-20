@@ -1,5 +1,6 @@
 package br.com.db1.colecoes.test;
 
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -33,7 +34,7 @@ public class ExercicioColecaoTest {
 	public void getConsoantesTest() {
 		Set<String> consoantes = colecao.getConsoantes("Fusca");
 		Assert.assertTrue(consoantes.size() == 3);
-		Assert.assertTrue(consoantes.contains("F"));
+		Assert.assertTrue(consoantes.contains("f"));
 		Assert.assertFalse(consoantes.contains("u"));
 		Assert.assertTrue(consoantes.contains("s"));
 		Assert.assertTrue(consoantes.contains("c"));
@@ -43,7 +44,17 @@ public class ExercicioColecaoTest {
 	
 	@Test
 	public void removerTeceiraPoicaoTest(){
-		Set<Integer> posicao = colecao.removerTerceiraPosicao();
-		Assert.assertTrue(posicao.remove(3));
+		List<Integer> posicao = colecao.removerTerceiraPosicao(2);
+		Assert.assertTrue(posicao.size() == 9);
 	}
+	
+	@Test
+	public void multiplosDeTres() {
+		List<Integer> posicoes = colecao.multiplosDeTres(3);
+		Assert.assertTrue();
+	}
+	
+	
+	
+	
 }
